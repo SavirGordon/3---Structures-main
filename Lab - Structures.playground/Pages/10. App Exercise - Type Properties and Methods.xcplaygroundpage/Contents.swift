@@ -10,12 +10,21 @@
  Call the method from outside of the struct and print the result to ensure that it works properly.
  */
 struct RunningWorkout {
+    
+    static var meterInFeet = 3.28084
+    static var meterInMeters = 1600.0
+    
+    static func mileTimeFor(distance: Double, time: Double) -> Double {
+       return time/distance * 1600
+    }
+    
     var distance: Double
     var time: Double
     var elevation: Double
 }
 
-
+var rw = RunningWorkout(distance: 3.41, time: 18.7, elevation: 46.8)
+RunningWorkout.mileTimeFor(distance: 3.41, time: 18.7)
 
 //:  It may be helpful to have a few type properties on `RunningWorkout` representing unit conversions (i.e. meters to mile, feet to meters, etc.). Go back and add a type property for `meterInFeet` and assign it 3.28084. Then add a type property for `mileInMeters` and assign it 1600.0. Print both of these values below.
 
